@@ -23,6 +23,19 @@ services:
       - "3000:3000"
     depends_on:
       - prometheus
+      - influxdb
+
+  influxdb:
+    image: influxdb:1.8
+    container_name: influxdb
+    environment:
+      - INFLUXDB_DB=metrics
+      - INFLUXDB_HTTP_AUTH_ENABLED=false
+    volumes:
+      - influxdb-data:/var/lib/influxdb
+    ports:
+      - "8086:8086"
 
 volumes:
   grafana-data:
+  influxdb-data:

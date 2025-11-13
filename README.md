@@ -12,6 +12,7 @@ docker compose up -d
 
 - Grafana quedará disponible en el puerto `3000` (usuario/clave por defecto vienen de `.env`).
 - Prometheus quedará disponible en el puerto `9090`.
+- InfluxDB quedará disponible en el puerto `8086` (base por defecto: `metrics`).
 
 **Archivos añadidos**
 
